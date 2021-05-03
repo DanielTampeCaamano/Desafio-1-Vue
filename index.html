@@ -53,7 +53,7 @@
       <div style="flex-direction: column;">
         <div style="border-style: groove;padding-right: 150px;padding-top: 18px; background-color: rgb(214, 214, 214);">
         </div>
-        <actualizar v-for="(producto,key) in productos" :producto="producto" :key="producto.id"></actualizar>
+        <actualizar v-for="(producto,index) in productos" :producto="producto" :index="producto.id" :key="producto.id" v-on:click="actualizarProducto(index)"></actualizar>
       </div>
       <div style="flex-direction: column;">
         <div style="border-style: groove;padding-right: 150px;padding-top: 18px; background-color: rgb(214, 214, 214);">

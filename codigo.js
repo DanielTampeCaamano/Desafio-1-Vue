@@ -79,11 +79,11 @@ Vue.component('precio', {
 })
 Vue.component('actualizar',{
     name: "actualizar",
-    props: ['producto','key'],
-    template: '<div style="border-style: groove;padding-right: 150px;">{{producto.id}}<button style="border-style: solid; border-color: aqua;border-radius: 15px;" v-on:click="actualizarProducto(key)">Actualizar</button></div>'
+    props: ['producto','index'],
+    template: '<div style="border-style: groove;padding-right: 150px;">{{producto.id}}<button style="border-style: solid; border-color: aqua;border-radius: 15px;">Actualizar</button></div>'
 })
 Vue.component('borrar',{
     name: "borrar",
     props: ['producto'],
-    template: '<div style="border-style: groove;padding-right: 150px;">{{producto.id}}<button style="border-style: solid; border-color: aqua;border-radius: 15px;" v-on:click="actualizarProducto">Borrar</button></div>'
+    template: '<div style="border-style: groove;padding-right: 150px;">{{producto.id}}<button style="border-style: solid; border-color: aqua;border-radius: 15px;">Borrar</button></div>'
 })
