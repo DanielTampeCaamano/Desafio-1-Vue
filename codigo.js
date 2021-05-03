@@ -62,6 +62,11 @@ Vue.component('nombre', {
     props: ['producto'],
     template: '<div style="border-style: groove;padding-right: 150px;">{{producto.nombre}}</div>'
 })
+Vue.component('nombreEditar',{
+    name: "nombreEditar",
+    props: ['producto'],
+    template: '<div style="border-style: groove;padding-right: 150px;"><input type="text" v-model="actualizarNombre" value={{producto.nombre}}></div>'
+})
 Vue.component('descripcion', {
     name: "descripcion",
     props: ['producto'],
@@ -74,6 +79,11 @@ Vue.component('precio', {
 })
 Vue.component('actualizar',{
     name: "actualizar",
+    props: ['producto','key'],
+    template: '<div style="border-style: groove;padding-right: 150px;">{{producto.id}}<button style="border-style: solid; border-color: aqua;border-radius: 15px;" v-on:click="actualizarProducto(key)">Actualizar</button></div>'
+})
+Vue.component('borrar',{
+    name: "borrar",
     props: ['producto'],
-    template: '<div style="border-style: groove;padding-right: 150px;">{{producto.id}}<button>Actualizar</button></div>'
+    template: '<div style="border-style: groove;padding-right: 150px;">{{producto.id}}<button style="border-style: solid; border-color: aqua;border-radius: 15px;" v-on:click="actualizarProducto">Borrar</button></div>'
 })
