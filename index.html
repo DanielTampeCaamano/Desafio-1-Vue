@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <title>Desafio 1 Vue</title>
 </head>
+
 <body>
-    
+
+  <div id="app">
+    <ol>
+      <tarea v-for="tarea in tareas" :tarea="tarea" :key="tarea.id">
+      </tarea>
+    </ol>
+  </div>
+  <div id="desafio">
+    <h1 style="text-align: center;">Mantenedor de Productos</h1>
+    <div style="border-color: aqua;border-style: dotted;border-radius: 12px;">
+      <h3 style="text-align: center;">Añadir Producto</h3>
+      <div style="display: flex; justify-content: space-between;font-weight: 700;padding-inline: 100px;">Nombre:
+        <input type="text" id="nombreFrm" v-model="nombreFrm" style="width: 700px;">
+      </div>
+      <div style="display: flex; justify-content: space-between;font-weight: 700;padding-inline: 100px;">Descripcion:
+        <input type="text" name="descripcionFrm" v-model="descripcionFrm" id="descripcionFrm" style="width: 700px;">
+      </div>
+      <div style="display: flex; justify-content: space-between;font-weight: 700;padding-inline: 100px;">Precio:
+        <input type="number" id="precioFrm" v-model="precioFrm" style="width: 700px;">
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center;padding-top: 5px;"><button
+        style="border-style: solid; border-color: aqua;border-radius: 15px;" v-on:click="ingresarProducto">Añadir
+        Producto</button></div>
+    <div style="display: flex;justify-content: center;">
+      <h2>Lista de Productos</h2>
+    </div>
+    <div style="display: flex;justify-content: center;">
+      <div style="flex-direction: column;">
+        <div style="border-style: groove;padding-right: 150px;background-color: rgb(214, 214, 214);">Nombre</div>
+        <nombre v-for="producto in productos" :producto="producto" :key="producto.id"></nombre>
+      </div>
+      <div style="flex-direction: column;">
+        <div style="border-style: groove;padding-right: 150px;background-color: rgb(214, 214, 214);">Descripcion</div>
+        <descripcion v-for="producto in productos" :producto="producto" :key="producto.id"></descripcion>
+      </div>
+      <div style="flex-direction: column;">
+        <div style="border-style: groove;padding-right: 150px;background-color: rgb(214, 214, 214);">Precio</div>
+        <precio v-for="producto in productos" :producto="producto" :key="producto.id"></precio>
+      </div>
+      <div style="flex-direction: column;">
+        <div style="border-style: groove;padding-right: 150px;padding-top: 18px; background-color: rgb(214, 214, 214);">
+        </div>
+        <actualizar v-for="producto in productos" :producto="producto" :key="producto.id"></actualizar>
+      </div>
+      <div style="flex-direction: column;">
+        <div style="border-style: groove;padding-right: 150px;padding-top: 18px; background-color: rgb(214, 214, 214);">
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <script src="codigo.js"></script>
+
 </body>
+
 </html>
